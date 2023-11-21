@@ -1,7 +1,12 @@
+/**
+ * @prettier
+ */
+
 import React from "react";
 import { NavigationDots, SocialMedia } from "../components";
 
 const AppWrap = (Component, idName, classNames) =>
+  // eslint-disable-next-line implicit-arrow-linebreak
   function HOC() {
     return (
       <div id={idName} className={`app__container ${classNames}`}>
@@ -10,7 +15,7 @@ const AppWrap = (Component, idName, classNames) =>
           <Component />
 
           <div className="copyright">
-            <p className="p-text">@2023 MAH7</p>
+            <p className="p-text">@{new Date().getFullYear()} MAH7</p>
             <p className="p-text">All rights reserved</p>
           </div>
         </div>

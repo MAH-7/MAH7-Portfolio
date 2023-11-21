@@ -43,7 +43,7 @@ const Work = () => {
       </h2>
 
       <div className="app__work-filter">
-        {["UI/UX", "Web App", "Mobile App", "React JS", "All"].map(
+        {["Web App", "Mobile App", "React JS", "React Native", "All"].map(
           (item, index) => (
             <div
               key={index}
@@ -102,7 +102,10 @@ const Work = () => {
 
             <div className="app__work-content app__flex">
               <h4 className="bold-text">{work.title}</h4>
-              <p className="p-text" style={{ marginTop: 10 }}>
+              <p
+                className="p-text"
+                style={{ marginTop: 10, textAlign: "center" }}
+              >
                 {work.description}
               </p>
 
@@ -117,4 +120,8 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, "work");
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);

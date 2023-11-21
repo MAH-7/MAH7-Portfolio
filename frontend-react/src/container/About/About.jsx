@@ -7,6 +7,7 @@ import { urlFor, client } from "../../client";
 
 const About = () => {
   const [abouts, setAbouts] = useState([]);
+
   useEffect(() => {
     const query = '*[_type == "abouts"]';
 
@@ -32,10 +33,20 @@ const About = () => {
             key={about.title + index}
           >
             <img src={urlFor(about.imgUrl)} alt={about.title} />
-            <h2 className="bold-text" style={{ marginTop: 20 }}>
+            <h2
+              className="bold-text"
+              style={{
+                width: "100%",
+                marginTop: 20,
+                textAlign: "center",
+              }}
+            >
               {about.title}
             </h2>
-            <p className="p-text" style={{ marginTop: 10 }}>
+            <p
+              className="p-text"
+              style={{ marginTop: 10, textAlign: "center" }}
+            >
               {about.description}
             </p>
           </motion.div>
@@ -45,4 +56,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "about");
+export default AppWrap(
+  MotionWrap(About, "app__about"),
+  "about",
+  "app__whitebg"
+);

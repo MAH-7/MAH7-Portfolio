@@ -1,17 +1,32 @@
 import React from "react";
-import { BsTwitter, BsInstagram } from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
+import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
+
+const openSocial = (link) => {
+  window.open(link, "_blank");
+};
 
 const SocialMedia = () => (
   <div className="app__social">
-    <div>
+    <div
+      onClick={() => {
+        openSocial("https://www.linkedin.com/");
+      }}
+    >
+      <BsLinkedin />
+    </div>
+    <div
+      onClick={() => {
+        openSocial("https://github.com/");
+      }}
+    >
+      <BsGithub />
+    </div>
+    <div
+      onClick={() => {
+        openSocial("https://twitter.com/");
+      }}
+    >
       <BsTwitter />
-    </div>
-    <div>
-      <FaFacebookF />
-    </div>
-    <div>
-      <BsInstagram />
     </div>
   </div>
 );
